@@ -1,35 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   utils.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 10:06:15 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/07/22 17:17:22 by bschwarz         ###   ########.fr       */
+/*   Created: 2025/07/22 16:58:03 by bschwarz          #+#    #+#             */
+/*   Updated: 2025/07/22 17:54:20 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
+#include "push_swap.h"
 
-# include "./libft/libft.h"
-
-typedef struct s_stack_a
+void	error_handling(int i)
 {
-	int					x;
-	struct t_stack_a	*prev;
-	struct t_stack_a	*next;
-}	t_stack_a;
-
-typedef struct s_stack_b
-{
-	int					x;
-	struct t_stack_b	*prev;
-	struct t_stack_b	*next;
-}	t_stack_b;
-
-void	error_handling(int i);
-long	*parsing_stack(char **av);
-
-#endif
+	if (i == 1)
+		ft_putstr_fd("Error: to few arguments\n", 2);
+	if (i == 2)
+		ft_putstr_fd("Error: not only integers in the stack\n", 2);
+	if (i == 3)
+		ft_putstr_fd("Error: int overflow", 2);
+	if (i == 4)
+		ft_putstr_fd("Error: failed to allocate memory", 2);
+	exit (0);
+}

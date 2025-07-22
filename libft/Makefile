@@ -13,6 +13,7 @@ SRC_CHAR =		./char/ft_isalnum.c\
 				./char/ft_isascii.c\
 				./char/ft_isdigit.c\
 				./char/ft_isprint.c\
+				./char/ft_isspace.c\
 				./char/ft_tolower.c\
 				./char/ft_toupper.c
 SRC_INT =		./int/ft_atoi.c\

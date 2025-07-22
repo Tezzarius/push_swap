@@ -1,0 +1,10 @@
+	i = 0;
+	tmp = ft_split(str, ' ');
+	if (!tmp)
+		return ;
+	ft_dllinit(tail, head, ft_atoi(tmp[0]));
+	while (tmp[++i])
+		ft_dlladd_end(head, ft_atoi(tmp[i]));
+	while (i >= 0)
+		free(tmp[i--]);
+	free(tmp);

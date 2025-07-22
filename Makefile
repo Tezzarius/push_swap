@@ -8,7 +8,9 @@ CFLAGS = -g
 
 HEADER = push_swap.h
 
-SCR =	./main.c
+SRC =	./main.c\
+		./parsing.c\
+		./utils.c
 
 OBJ = $(SRC:.c=.o)
 

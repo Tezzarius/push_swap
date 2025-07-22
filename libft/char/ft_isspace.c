@@ -1,35 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/07/21 10:06:15 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/07/22 17:17:22 by bschwarz         ###   ########.fr       */
+/*   Created: 2025/07/22 15:30:28 by bschwarz          #+#    #+#             */
+/*   Updated: 2025/07/22 15:55:11 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include "./libft/libft.h"
-
-typedef struct s_stack_a
+int	ft_isspace(int c)
 {
-	int					x;
-	struct t_stack_a	*prev;
-	struct t_stack_a	*next;
-}	t_stack_a;
-
-typedef struct s_stack_b
-{
-	int					x;
-	struct t_stack_b	*prev;
-	struct t_stack_b	*next;
-}	t_stack_b;
-
-void	error_handling(int i);
-long	*parsing_stack(char **av);
-
-#endif
+	if (c == ' ' || (c >= 9 && c <= 13))
+		return (1);
+	return (0);
+}

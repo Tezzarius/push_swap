@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:58:03 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/07/22 17:54:20 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/07/23 09:56:02 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,7 @@ void	error_handling(int i)
 		ft_putstr_fd("Error: int overflow", 2);
 	if (i == 4)
 		ft_putstr_fd("Error: failed to allocate memory", 2);
+	if (i == 5)
+		ft_putstr_fd("Error: double number", 2);
 	exit (0);
 }

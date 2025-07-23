@@ -4,7 +4,7 @@ LIBFT_DIR = libft
 LIBFT = $(LIBFT_DIR)/libft.a
 
 CC = cc
-CFLAGS = -g
+CFLAGS = -Wall -Wextra -Werror
 
 HEADER = push_swap.h
 
@@ -23,10 +23,10 @@ $(LIBFT):
 	make -C $(LIBFT_DIR)
 
 %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	@rm -f $(OBJ)
 	make -C $(LIBFT_DIR) clean
 
 fclean: clean

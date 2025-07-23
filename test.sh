@@ -1,4 +1,4 @@
 make
 make clean
 
-./push_swap 1 2 3 7 9 6 -2
+./push_swap 1 2 3 7 9 0 -2

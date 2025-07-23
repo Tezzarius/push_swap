@@ -6,13 +6,13 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:29:19 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/07/22 17:54:52 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/07/23 09:35:23 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long	ft_atoi_check(char *s)
+static long	ft_atol(char *s)
 {
 	int		i;
 	long	d;
@@ -54,6 +54,6 @@ long	*parsing_stack(char **av)
 	if (!stack)
 		error_handling(4);
 	while (av[++i])
-		stack[i - 1] = ft_atoi_check(av[i]);
+		stack[i - 1] = ft_atol(av[i]);
 	return (stack);
 }

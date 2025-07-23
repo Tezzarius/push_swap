@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 10:06:15 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/07/22 17:17:22 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/07/23 09:33:38 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,6 @@
 # define PUSH_SWAP_H
 
 # include "./libft/libft.h"
-
-typedef struct s_stack_a
-{
-	int					x;
-	struct t_stack_a	*prev;
-	struct t_stack_a	*next;
-}	t_stack_a;
-
-typedef struct s_stack_b
-{
-	int					x;
-	struct t_stack_b	*prev;
-	struct t_stack_b	*next;
-}	t_stack_b;
 
 void	error_handling(int i);
 long	*parsing_stack(char **av);

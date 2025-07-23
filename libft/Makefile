@@ -75,13 +75,13 @@ $(NAME): $(OBJ)
 	ar rcs -o $(NAME) $(OBJ)
 
 %.o: %.c $(HEADER)
-	$(CC) $(CFLAGS) -c $< -o $@
+	@$(CC) $(CFLAGS) -c $< -o $@
 
 bonus: $(OBJ)
 	ar rcs -o $(NAME) $(OBJ)
 
 clean:
-	rm -f $(OBJ) $
+	@rm -f $(OBJ) $
 
 fclean: clean
 	rm -f $(NAME)

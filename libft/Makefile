@@ -40,6 +40,7 @@ SRC_LIST =		./list/ft_dlladd_beginning.c\
 				./list/ft_lstsize.c
 SRC_MEM =		./mem/ft_bzero.c\
 				./mem/ft_calloc.c\
+				./mem/ft_free.c\
 				./mem/ft_memchr.c\
 				./mem/ft_memcmp.c\
 				./mem/ft_memcpy.c\

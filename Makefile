@@ -10,7 +10,7 @@ HEADER = push_swap.h
 
 SRC =	./main.c\
 		./parsing.c\
-		./utils.c
+		./error.c
 
 OBJ = $(SRC:.c=.o)
 
@@ -20,7 +20,7 @@ $(NAME): $(OBJ) $(LIBFT)
 	$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 
 $(LIBFT):
-	make -C $(LIBFT_DIR)
+	@make -C $(LIBFT_DIR)
 
 %.o: %.c $(HEADER)
 	@$(CC) $(CFLAGS) -c $< -o $@

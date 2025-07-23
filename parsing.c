@@ -6,13 +6,13 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:29:19 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/07/23 09:35:23 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/07/23 13:52:05 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static long	ft_atol(char *s)
+static long	ft_satol(char *s)
 {
 	int		i;
 	long	d;
@@ -40,20 +40,31 @@ static long	ft_atol(char *s)
 	return (d);
 }
 
-long	*parsing_stack(char **av)
+t_stack	*parsing_args(t_stack *stack_a, int ac, char **av)
 {
 	int		i;
-	int		count;
-	long	*stack;
+	int		j;
+	long	num;
+	char	**tmp;
 
 	i = 0;
-	count = 0;
-	while (av[count])
-		count++;
-	stack = malloc(sizeof(long) * count);
-	if (!stack)
-		error_handling(4);
-	while (av[++i])
-		stack[i - 1] = ft_atol(av[i]);
-	return (stack);
+	while (++i < ac)
+	{
+		tmp = ft_split(av[i], ' ');
+		if (!tmp || !*tmp)
+			error_handling(0);
+		j = -1;
+		while (tmp[++j])
+		{
+			num = ft_satol(tmp[j]);
+			if (ft_dllfind_node(stack_a->tail, num))
+				error_handling(4);
+			if (!stack_a->head)
+				ft_dllinit(&stack_a->tail, &stack_a->head, (int)num);
+			else
+				ft_dlladd_end(&stack_a->head, (int)num);
+		}
+		ft_free(tmp);
+	}
+	return (stack_a);
 }

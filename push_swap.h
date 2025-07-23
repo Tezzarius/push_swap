@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 10:06:15 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/07/23 09:33:38 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/07/23 13:55:40 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,13 @@
 
 # include "./libft/libft.h"
 
+typedef struct s_stack
+{
+	t_dll	*tail;
+	t_dll	*head;
+}	t_stack;
+
 void	error_handling(int i);
-long	*parsing_stack(char **av);
+t_stack	*parsing_args(t_stack *stack_a, int ac, char **av);
 
 #endif

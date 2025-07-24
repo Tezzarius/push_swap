@@ -6,13 +6,13 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 14:07:21 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/07/24 13:28:24 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/07/24 15:40:58 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-static int	push_to_stack(t_stack *from, t_stack *to)
+static int	push_(t_stack *from, t_stack *to)
 {
 	t_dll	*tmp;
 
@@ -43,12 +43,12 @@ static int	push_to_stack(t_stack *from, t_stack *to)
 
 void	pa(t_stack *stack_a, t_stack *stack_b)
 {
-	if (push_to_stack(stack_a, stack_b))
+	if (push_(stack_a, stack_b))
 		ft_printf("pa\n");
 }
 
 void	pb(t_stack *stack_a, t_stack *stack_b)
 {
-	if (push_to_stack(stack_b, stack_a))
+	if (push_(stack_b, stack_a))
 		ft_printf("pb\n");
 }

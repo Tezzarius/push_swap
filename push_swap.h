@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 10:06:15 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/07/23 14:33:13 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/07/23 15:17:03 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,11 @@ typedef struct s_stack
 
 void	error_handling(int i);
 t_stack	*parsing_args(t_stack *stack_a, int ac, char **av);
+
+// void	sa(t_stack *stack_a);
+// void	sb(t_stack *stack_b);
+// void	ss(t_stack *stack_a, t_stack *stack_b);
+// void	pa(t_stack *stack_a, t_stack *stack_b);
+// void	pb(t_stack *stack_a, t_stack *stack_b);
 
 #endif

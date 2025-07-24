@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/23 14:07:21 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/07/24 10:03:35 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/07/24 10:37:40 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,26 @@
 
 static void	push_to_stack(t_stack *from, t_stack *to)
 {
-	t_stack	tmp;
+	t_dll	*tmp;
 	
-	if (!from->tail || !from->tail->next)
+	tmp = NULL;
+	if (!from->tail)
 		return ;
-	ft_dlladd_beginning(to->tail, from->tail->content);
 	tmp = from->tail;
-	from->tail->next->prev = NULL;
-	from->tail = from->tail->next;
+	if (!to->tail)
+		ft_dllinit(&to->tail, &to->head, from->tail->content);
+	else
+		ft_dlladd_beginning(&to->tail, from->tail->content);
+	if (from->tail != from->head)
+	{
+		from->tail->next->prev = NULL;
+		from->tail = from->tail->next;	
+	}
+	else
+	{
+		from->tail = NULL;
+		from->head = NULL;
+	}
 	free(tmp);
 }
 

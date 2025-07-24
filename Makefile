@@ -10,6 +10,7 @@ HEADER = push_swap.h
 
 SRC =	./main.c\
 		./parsing.c\
+		./push.c\
 		./error.c
 
 OBJ = $(SRC:.c=.o)

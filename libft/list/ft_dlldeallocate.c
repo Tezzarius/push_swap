@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 11:13:11 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/07/21 13:45:48 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/07/25 12:30:53 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,17 @@
 void	ft_dlldeallocate(t_dll **tail, t_dll **head)
 {
 	t_dll	*curr;
+	t_dll	*next;
 
 	curr = *tail;
 	if (*tail == NULL)
 		return ;
-	while (curr->next != NULL)
+	while (curr)
 	{
-		curr = curr->next;
-		free(curr->prev);
+		next = curr->next;
+		free(curr);
+		curr = next;
 	}
-	free(curr);
 	*tail = NULL;
 	*head = NULL;
 }

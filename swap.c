@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 09:52:32 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/07/24 15:47:41 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/07/25 14:25:55 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	swap_stack(t_stack *stack)
 	t_dll	*first;
 	t_dll	*second;
 
-	if (!stack->tail || stack->tail->next)
+	if (!stack || !stack->tail || !stack->tail->next)
 		return (0);
 	first = stack->tail;
 	second = stack->tail->next;
@@ -43,6 +43,16 @@ void	sb(t_stack *stack_b)
 
 void	ss(t_stack *stack_a, t_stack *stack_b)
 {
-	if (swap_stack(stack_a) && swap_stack(stack_b))
+	int	p;
+	
+	p = 0;
+	if (swap_stack(stack_a))
+		p = 1;
+	if (swap_stack(stack_b))
+		p = 1;
+	if (p == 1)
+	{
 		ft_printf("ss\n");
+		p = 0;
+	}
 }

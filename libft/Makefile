@@ -4,7 +4,7 @@ SRC_DIR = .
 OBJ_DIR = obj
 
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
+CFLAGS = -Wall -Wextra -Werror -I.
 
 HEADER = libft.h
 
@@ -55,8 +55,8 @@ SRC_PRINT =		./print/ft_printf.c\
 				./print/ft_putendl_fd.c\
 				./print/ft_putnbr_fd.c\
 				./print/ft_putstr_fd.c
-SRC_STRING =	./string/ft_split.c\
 
+SRC_STRING =	./string/ft_split.c\
 				./string/ft_strlcat.c\
 				./string/ft_strchr.c\
 				./string/ft_strlcpy.c\
@@ -88,7 +88,7 @@ $(OBJ_DIR)/%.o: %.c $(HEADER)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	@rm -f $(OBJ) $
+	@rm -rf $(OBJ_DIR)
 
 fclean: clean
 	@rm -f $(NAME)

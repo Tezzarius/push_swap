@@ -6,11 +6,26 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/05 17:50:11 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/08/07 14:03:27 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/08/08 10:04:15 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+size_t	stack_size(t_stack *stack)
+{
+	t_dll	*curr;
+	size_t	size;
+
+	size = 0;
+	curr = stack->tail;
+	while (curr)
+	{
+		size++;
+		curr = curr->next;
+	}
+	return (size);
+}
 
 void	assign_index(t_stack *stack)
 {
@@ -19,7 +34,6 @@ void	assign_index(t_stack *stack)
 	size_t	index;
 
 	curr = stack->tail;
-	stack->size = 0;
 	while (curr)
 	{
 		index = 1;
@@ -32,7 +46,6 @@ void	assign_index(t_stack *stack)
 		}
 		curr->index = index;
 		curr = curr->next;
-		if (stack->size < index)
-			stack->size = index;
 	}
+	stack->size = stack_size(stack);
 }

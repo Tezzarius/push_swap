@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 10:12:30 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/08/07 15:55:16 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/08/08 10:02:06 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ static void	sort_three_reverse(t_stack *_b)
 	else if (a > b && b < c && a > c)
 	{
 		rrb(_b);
-		sa(_b);
+		sb(_b);
 	}
 	else if (a > b && b < c && a < c)
 		rrb(_b);
@@ -82,12 +82,9 @@ static void	sort_six(t_stack *_a, t_stack *_b)
 			ra(_a);
 	}
 	sort_three_reverse(_b);
-	if (!(_a->tail->next->next))
-	{
-		if (_a->tail->index > _a->tail->next->index)
-			sa(_a);
-	}
-	else
+	if (stack_size(_a) == 2 && _a->tail->index > _a->tail->next->index)
+		sa(_a);
+	if (stack_size(_a) == 3)
 		sort_three(_a);
 	while (_b->tail)
 		pa(_a, _b);
@@ -122,7 +119,7 @@ static void	sorting_algorithm(t_stack *_a, t_stack *_b)
 
 void	sorting(t_stack *_a, t_stack *_b)
 {
-	if (_a->tail->index > _a->tail->next->index && _a->size == 1)
+	if (_a->size == 2 && _a->tail->index > _a->tail->next->index)
 		return (sa(_a));
 	else if (_a->size == 3)
 		sort_three(_a);

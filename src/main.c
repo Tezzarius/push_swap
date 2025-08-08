@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 10:03:36 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/08/07 15:33:00 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/08/08 14:56:21 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,10 +25,8 @@ int	main(int ac, char **av)
 	assign_index(&_a);
 	sorting(&_a, &_b);
 	
-	ft_printf("\nstack_a:\n");
-	ft_dlloutput_forward(_a.tail);
-	ft_printf("\nstack_b:\n");
-	ft_dlloutput_forward(_b.tail);
+	// ft_printf("\nstack_a:\n");
+	// ft_dlloutput_forward(_a.tail);
 	ft_dlldeallocate(&_a.tail, &_a.head);
 	ft_dlldeallocate(&_b.tail, &_b.head);
 	return (0);

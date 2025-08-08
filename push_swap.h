@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 10:06:15 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/08/08 09:48:14 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/08/08 16:22:05 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,15 @@ typedef struct s_stack
 	t_dll	*tail;
 	t_dll	*head;
 	size_t	size;
+	char	**array;
 }	t_stack;
 
-void	error_handling(size_t i);
 size_t	stack_size(t_stack *stack);
 void	assign_index(t_stack *stack);
 void	sorting(t_stack *_a, t_stack *_b);
-t_stack	*parsing_args(t_stack *stack_a, int ac, char **av);
+void	deallocate_stacks(t_stack *_a, t_stack *_b);
+void	error_handling(t_stack *_a, t_stack *_b, size_t i);
+void	parsing_args(t_stack *_a, t_stack *_b, int ac, char **av);
 
 //operations
 void	sa(t_stack *stack_a);
@@ -40,5 +42,11 @@ void	rr(t_stack *stack_a, t_stack *stack_b);
 void	rra(t_stack *stack_a);
 void	rrb(t_stack *stack_b);
 void	rrr(t_stack *stack_a, t_stack *stack_b);
+
+//list functions
+int		ft_add_end(t_dll **head, int value);
+t_dll	*ft_find_node(t_dll *tail, int value);
+void	ft_deallocate(t_dll **tail, t_dll **head);
+int		ft_init(t_dll **tail, t_dll **head, int value);
 
 #endif

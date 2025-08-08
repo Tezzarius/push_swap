@@ -20,18 +20,7 @@ SRC_CHAR =		./char/ft_isalnum.c\
 SRC_INT =		./int/ft_atoi.c\
 				./int/ft_itoa.c
 
-SRC_LIST =		./list/ft_dlladd_beginning.c\
-				./list/ft_dlladd_end.c\
-				./list/ft_dlldeallocate.c\
-				./list/ft_dllfind_node_rec.c\
-				./list/ft_dllfind_node.c\
-				./list/ft_dllinit.c\
-				./list/ft_dllinsert_after.c\
-				./list/ft_dlloutput_backward.c\
-				./list/ft_dlloutput_forward.c\
-				./list/ft_dllremove_node.c\
-				./list/ft_dllreverse.c\
-				./list/ft_lstadd_back.c\
+SRC_LIST =		./list/ft_lstadd_back.c\
 				./list/ft_lstadd_front.c\
 				./list/ft_lstclear.c\
 				./list/ft_lstdelone.c\

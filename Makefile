@@ -17,6 +17,7 @@ SRC =	$(SRC_DIR)/main.c\
 		$(SRC_DIR)/push.c\
 		$(SRC_DIR)/swap.c\
 		$(SRC_DIR)/sort.c\
+		$(SRC_DIR)/utils.c\
 		$(SRC_DIR)/error.c\
 		$(SRC_DIR)/rotate.c\
 		$(SRC_DIR)/parsing.c\

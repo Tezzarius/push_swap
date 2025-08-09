@@ -1,4 +1,5 @@
 make re
 make clean
 
-./push_swap 43 7 9 2 4
+ARG=$(seq -100 100 | shuf | head -100 | tr '\n' ' ')
+./push_swap $ARG | ./checker $ARG

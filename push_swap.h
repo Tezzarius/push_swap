@@ -6,14 +6,18 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 10:06:15 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/08/09 10:35:30 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/08/09 14:38:09 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
+# define RED	"\e[1;91m"
+# define RESET	"\x1b[0m"
+
 # include "./libft/libft.h"
+# include <ctype.h>
 
 typedef struct s_stack
 {

@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/22 16:58:03 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/08/08 16:26:38 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/08/09 14:35:50 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,14 @@ void	error_handling(t_stack *_a, t_stack *_b, size_t i)
 	if (_a->array)
 		ft_free(_a->array);
 	if (i == 1)
-		ft_putstr_fd("Error: to few arguments\n", 2);
+		ft_putstr_fd(RED "Error: " RESET "to few arguments\n", 2);
 	else if (i == 2)
-		ft_putstr_fd("Error: non integer input detected\n", 2);
+		ft_putstr_fd(RED "Error: " RESET "non integer input detected\n", 2);
 	else if (i == 3)
-		ft_putstr_fd("Error: int overflow\n", 2);
+		ft_putstr_fd(RED "Error: " RESET "int overflow\n", 2);
 	else if (i == 4)
-		ft_putstr_fd("Error: duplicate detected\n", 2);
+		ft_putstr_fd(RED "Error: " RESET "duplicate detected\n", 2);
 	else
-		ft_putstr_fd("Error\n", 2);
+		ft_putstr_fd(RED "Error\n" RESET, 2);
 	exit (0);
 }

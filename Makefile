@@ -2,6 +2,8 @@ NAME = push_swap
 
 MAKEFLAGS += --no-print-directory
 
+GREEN=\033[1;32m
+
 SRC_DIR = src
 OBJ_DIR = obj
 
@@ -30,6 +32,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ) $(LIBFT)
 	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
+	@echo "$(GREEN) Compiled!"
 
 $(LIBFT):
 	@make -C $(LIBFT_DIR)
@@ -41,10 +44,12 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c $(HEADER)
 clean:
 	@rm -rf $(OBJ_DIR)
 	@make -C $(LIBFT_DIR) clean
+	@echo "$(GREEN) Objects removed!"
 
 fclean: clean
 	@rm -f $(NAME)
 	@make -C $(LIBFT_DIR) fclean
+	@echo "$(GREEN) Executable removed!"
 
 re: fclean all
 

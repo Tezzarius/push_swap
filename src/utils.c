@@ -6,11 +6,25 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/08/08 16:12:28 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/08/08 16:28:08 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/08/09 10:35:20 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int	is_sorted(t_stack *_a)
+{
+	t_dll	*curr;
+
+	curr = _a->tail;
+	while (curr)
+	{
+		if (curr->next && curr->content > curr->next->content)
+			return (0);
+		curr = curr->next;
+	}
+	return (1);
+}
 
 void	ft_deallocate(t_dll **tail, t_dll **head)
 {

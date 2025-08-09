@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/21 10:06:15 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/08/08 16:22:05 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/08/09 10:35:30 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ typedef struct s_stack
 	char	**array;
 }	t_stack;
 
+int		is_sorted(t_stack *_a);
 size_t	stack_size(t_stack *stack);
 void	assign_index(t_stack *stack);
 void	sorting(t_stack *_a, t_stack *_b);

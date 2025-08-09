@@ -6,7 +6,7 @@
 /*   By: bschwarz <bschwarz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/24 10:12:30 by bschwarz          #+#    #+#             */
-/*   Updated: 2025/08/08 10:02:06 by bschwarz         ###   ########.fr       */
+/*   Updated: 2025/08/09 10:35:41 by bschwarz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,8 @@ static void	sorting_algorithm(t_stack *_a, t_stack *_b)
 
 void	sorting(t_stack *_a, t_stack *_b)
 {
+	if (is_sorted(_a))
+		return ;
 	if (_a->size == 2 && _a->tail->index > _a->tail->next->index)
 		return (sa(_a));
 	else if (_a->size == 3)
